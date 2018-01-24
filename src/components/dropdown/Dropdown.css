@@ -1,0 +1,38 @@
+ul{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+
+
+.dropdown-wrap{
+    display:inline-block;
+    position: relative;
+}
+
+.dropdown-item{
+    cursor: pointer;
+}
+.dropdown-item:hover{
+    background: rgb(167, 169, 170);
+}
+.dropdown-wrap .dropdown-list{
+    position: absolute;
+    top: 24px;
+    left: 0;
+    width: 100%;
+    border: 1px solid #678;
+}
+.disabled{
+    cursor: default;
+    color: #bfcbd9;
+    pointer-events: none;
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none
+}
