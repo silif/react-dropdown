@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import ClickOutside from 'react-click-outside';
 import PropTypes from 'prop-types';
 import "./Dropdown.css"
+import ChevronDown from 'react-icons/lib/go/chevron-down';
 class Dropdown extends Component {
 
     constructor(props) {
@@ -70,8 +71,8 @@ class Dropdown extends Component {
         const {type, size, menu } = this.props;
         return (
             <div className="dropdown-wrap">
-                <button className="dropdown" ref="trigger">
-                    <span>{this.props.children}<i></i></span>
+                <button className="btn" ref="trigger">
+                    <span className="text">{this.props.children}</span><ChevronDown/>
                 </button>
                 {
                     React.cloneElement(menu, {
@@ -88,17 +89,13 @@ Dropdown.childContextTypes = {
 
 Dropdown.propTypes = {
     menu: PropTypes.node.isRequired,
-    type: PropTypes.string,
-    size: PropTypes.string,
+    // type: PropTypes.string,
     trigger: PropTypes.oneOf(['hover', 'click']),
-    hideOnClick: PropTypes.bool,
-    onClick: PropTypes.func,
     onCommand: PropTypes.func,
     onVisibleChange: PropTypes.func
   }
   
   Dropdown.defaultProps = {
-    hideOnClick: true,
     trigger: 'hover',
   }
 export default ClickOutside(Dropdown);
