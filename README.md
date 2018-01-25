@@ -20,7 +20,8 @@ react-dropdown
 
 <Dropdown 
     onCommand={this.handleCommand.bind(this)}
-    trigger="hover"
+    // 事件可不用写
+    trigger="click" // 触发方式只能是hover click 
     // type="button" type="text" 文字还是按钮 待完成
     menu={(
         <Dropdown.Menu>
