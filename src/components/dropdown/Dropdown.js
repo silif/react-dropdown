@@ -51,14 +51,12 @@ class Dropdown extends Component {
     }
     initEvent(){
         const triggerElm= ReactDOM.findDOMNode(this.refs.trigger);
+        let dropdownElm= ReactDOM.findDOMNode(this.refs.dropdown);
+        dropdownElm.addEventListener('mouseenter', this.show.bind(this));
+        dropdownElm.addEventListener('mouseleave', this.hide.bind(this));
         if(this.props.trigger==="hover"){
             triggerElm.addEventListener('mouseenter', this.show.bind(this));
             triggerElm.addEventListener('mouseleave', this.hide.bind(this));
-      
-            let dropdownElm= ReactDOM.findDOMNode(this.refs.dropdown);
-      
-            dropdownElm.addEventListener('mouseenter', this.show.bind(this));
-            dropdownElm.addEventListener('mouseleave', this.hide.bind(this));
         }else if(this.props.trigger==="click"){
             triggerElm.addEventListener('click', this.handleClick.bind(this))
         }
